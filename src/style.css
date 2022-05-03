@@ -35,7 +35,8 @@ h1 {
   padding-left: 15px;
 }
 
-.head, form div {
+form div, 
+.head {
   display: flex;
   justify-content: space-between;
   width: 100%;
@@ -47,14 +48,22 @@ form div input {
   padding-left: 20px;
 }
 
-.head button, form div button {
+form div button, 
+.head button {
   border: none;
   background-color: transparent;
   padding: 5px;
   margin-right: 2%;
 }
 
-.head button img, form div button img {
+li img {
+  height: 30px;
+  padding: 5px;
+  margin-right: 1%;
+}
+
+form div button img, 
+.head button img {
   height: 20px;
   width: 20px;
 }
@@ -77,13 +86,7 @@ li {
   align-items: center;
   padding-left: 20px;
   font-size: 14px;
-  font-weight: 300
-}
-
-li img {
-  height: 30px;
-  padding: 5px;
-  margin-right: 1%;
+  font-weight: 300;
 }
 
 .clear-complete {

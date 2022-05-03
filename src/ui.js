@@ -1,7 +1,9 @@
-import TodoList from "./todolist";
+import TodoList from './todolist.js';
 
 export default class UI {
+
   static #toDo = document.querySelector('.todo-placeholder');
+  
   static #tasksTemplate = document.querySelector('li');
 
   static displayEach(task) {
