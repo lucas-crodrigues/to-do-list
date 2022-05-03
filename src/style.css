@@ -35,7 +35,7 @@ h1 {
   padding-left: 15px;
 }
 
-form div, 
+form div,
 .head {
   display: flex;
   justify-content: space-between;
@@ -48,7 +48,7 @@ form div input {
   padding-left: 20px;
 }
 
-form div button, 
+form div button,
 .head button {
   border: none;
   background-color: transparent;
@@ -62,7 +62,7 @@ li img {
   margin-right: 1%;
 }
 
-form div button img, 
+form div button img,
 .head button img {
   height: 20px;
   width: 20px;
