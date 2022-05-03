@@ -1,7 +1,102 @@
-.hello {
-  color: red;
-}
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
 body {
-  background-color: rgb(218, 219, 241);
+  font-family: 'Roboto', sans-serif;
+  background-color: rgb(240, 240, 240);
+}
+
+button {
+  font-family: 'Roboto', sans-serif;
+  cursor: pointer;
+}
+
+.hide {
+  display: none;
+}
+
+.todo-list {
+  display: flex;
+  flex-flow: column;
+  margin: 20% auto;
+  height: min-content;
+  width: 40%;
+  background-color: #fff;
+  filter: drop-shadow(1px 5px 5px gray);
+}
+
+.todo-list > * {
+  display: flex;
+  border-bottom: 1px solid rgb(240, 240, 240);
+}
+
+h1 {
+  font-size: 16px;
+  font-weight: 300;
+  padding-left: 15px;
+}
+
+.head, form div {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+form div input {
+  width: inherit;
+  border: none;
+  padding-left: 20px;
+}
+
+.head button, form div button {
+  border: none;
+  background-color: transparent;
+  padding: 5px;
+  margin-right: 2%;
+}
+
+.head button img, form div button img {
+  height: 20px;
+  width: 20px;
+}
+
+.todo-placeholder {
+  flex-flow: column;
+}
+
+ul {
+  padding: 0%;
+  margin: 0%;
+}
+
+li {
+  list-style: none;
+  border-bottom: 1px solid rgb(240, 240, 240);
+  width: calc(100% - 20px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 20px;
+  font-size: 14px;
+  font-weight: 300
+}
+
+li img {
+  height: 30px;
+  padding: 5px;
+  margin-right: 1%;
+}
+
+.clear-complete {
+  text-align: center;
+  height: 50px;
+  border: none;
+  background-color: rgb(240, 240, 240);
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+  font-weight: 300;
+}
+
+.clear-complete:hover {
+  background-color: rgb(225, 225, 225);
 }
