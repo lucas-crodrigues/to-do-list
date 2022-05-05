@@ -1,1 +1,31 @@
-<!doctype html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Webpack Exercise</title><script defer="defer" src="runtime.js"></script><script defer="defer" src="main.js"></script></head><body><h1>Hello webpack!</h1></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+<script defer src="runtime.bundle.js"></script><script defer src="index.bundle.js"></script></head>
+<body>
+    <section class="todo-list">
+        <div class="head">
+            <h1>Today's To-Do List</h1>
+            <button type="button"><img src="./art/refresh.svg" alt=""></button>
+        </div>
+        <form action="submit">
+            <div>
+                <input class="add-task" type="text" placeholder="Add to your list...">
+                <button type="submit"><img src="./art/add.svg" alt=""></button>
+            </div>
+        </form>
+        <ul class="todo-placeholder"></ul>
+        <button type="button" class="clear-complete">Clear all completed</button>
+    </section>
+    <!-- <ul class="hide">
+        <li>
+            <input type="checkbox">
+            <label></label>
+            <img src="./more.svg" alt="">
+        </li>
+    </ul> -->
+</body>
+</html>
