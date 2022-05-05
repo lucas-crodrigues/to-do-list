@@ -1,12 +1,14 @@
 export default class TodoList {
-  static #todoList = [
-    { description: 'something', completed: true, index: 1 },
-    { description: 'something else', completed: false, index: 2 },
-    { description: 'something important', completed: true, index: 3 },
-    { description: 'finish the day', completed: false, index: 4 },
-  ]
+  static #todoList = []
 
   static getTodoList() {
     return this.#todoList;
+  }
+
+  static newTask = (task) => {
+    const index = this.#todoList.length + 1;
+    const newTask = { ...task, completed: false, index };
+    this.#todoList.push(newTask);
+    return newTask;
   }
 }

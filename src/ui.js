@@ -5,6 +5,8 @@ export default class UI {
 
   static #tasksTemplate = document.querySelector('li');
 
+  static addTask = document.querySelector('.add-task');
+
   static displayEach(task) {
     const taskElement = UI.#tasksTemplate.cloneNode(true);
     taskElement.querySelector('input').checked = task.completed;
