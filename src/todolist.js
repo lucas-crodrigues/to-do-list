@@ -1,9 +1,9 @@
 let tasks = JSON.parse(localStorage.getItem('tasks')) || [];
 
 export default class TodoList {
-  constructor(task, id ) {
+  constructor(task, completed = false, id = null ) {
     this.taskName = task;
-    this.completed = false;
+    this.completed = completed;
     this.id = id;
   }
 
@@ -21,7 +21,6 @@ export default class TodoList {
     const buttonID = button.id;
     console.log('my id is ' + buttonID);
     console.log('and my id is ' + tasks[buttonID - 1].id)
-    // tasks = tasks.filter((task) => task.id !== buttonID);
     tasks.splice(buttonID - 1, 1);
     localStorage.setItem('tasks', JSON.stringify(tasks));
     console.log(localStorage);
@@ -38,12 +37,16 @@ export default class TodoList {
     this.getLocalStorage().forEach((task, id) => {
       allTasks += `<li class="task-list">
                               <input type="checkbox">
-                              <label>${task.taskName}</label>
+                              <input class="task-name" type="text" value="${task.taskName}"></input>
                               <button type="button" class="remove" id="${task.id}"><img src="8ae4449c8b41ee3a8178.svg" alt=""  id="${task.id}"></button>
                             </li>`
     });
     return allTasks;
   }
+
+  // static updateIds() {
+
+  // }
 
   // static #todoList = []
 
