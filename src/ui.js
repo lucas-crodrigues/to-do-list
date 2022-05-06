@@ -31,5 +31,7 @@ export default class UI {
 
     document.querySelector('.clear-complete').addEventListener('click', TodoList.clearComplete);
     document.querySelector('.clear-complete').addEventListener('click', UI.renderTasks);
+
+    document.querySelector('.head button').addEventListener('click', UI.renderTasks);
   }
 }
