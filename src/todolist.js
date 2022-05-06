@@ -45,7 +45,7 @@ export default class TodoList {
 
   static updateIds() {
     tasks = this.getLocalStorage();
-    for (let i = 0; i < tasks.length; i++) {// eslint-disable-line no-plusplus
+    for (let i = 0; i < tasks.length; i++) { // eslint-disable-line no-plusplus
       tasks[i].id = i + 1;
     }
     localStorage.setItem('tasks', JSON.stringify(tasks));
