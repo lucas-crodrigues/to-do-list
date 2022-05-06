@@ -1,7 +1,7 @@
 let tasks = JSON.parse(localStorage.getItem('tasks')) || [];
 
 export default class TodoList {
-  constructor(task, completed = false, id = null ) {
+  constructor(task, completed = false, id = null) {
     this.taskName = task;
     this.completed = completed;
     this.id = id;
@@ -9,8 +9,8 @@ export default class TodoList {
 
   static addTask = (e) => {
     e.preventDefault();
-    let itask = document.querySelector('.add-task').value;
-    let tasks = this.getLocalStorage();
+    const itask = document.querySelector('.add-task').value;
+    tasks = this.getLocalStorage();
     tasks.push({ taskName: itask, completed: false, id: tasks.length + 1 });
     localStorage.setItem('tasks', JSON.stringify(tasks));
     document.querySelector('.add-task').value = '';
@@ -18,7 +18,7 @@ export default class TodoList {
   }
 
   static removeTask = (e) => {
-    let tasks = this.getLocalStorage();
+    tasks = this.getLocalStorage();
     const button = e.target;
     const buttonID = button.id;
     tasks.splice(buttonID - 1, 1);
@@ -33,19 +33,19 @@ export default class TodoList {
 
   static markupAllTasks() {
     let allTasks = '';
-    this.getLocalStorage().forEach((task, id) => {
+    this.getLocalStorage().forEach((task) => {
       allTasks += `<li class="task-list">
                               <input type="checkbox">
                               <input class="task-name"  id="i_${task.id}" type="text" value="${task.taskName}"></input>
                               <button type="button" class="remove" id="${task.id}"><img src="8ae4449c8b41ee3a8178.svg" alt=""  id="${task.id}"></button>
-                            </li>`
+                            </li>`;
     });
     return allTasks;
   }
 
   static updateIds() {
-    let tasks = this.getLocalStorage();
-    for (let i = 0; i < tasks.length; i++) {
+    tasks = this.getLocalStorage();
+    for (let i = 0; i < tasks.length; i++) {// eslint-disable-line no-plusplus
       tasks[i].id = i + 1;
     }
     localStorage.setItem('tasks', JSON.stringify(tasks));
@@ -53,9 +53,9 @@ export default class TodoList {
   }
 
   static updateTask = (e) => {
-    let tasks = this.getLocalStorage();
+    tasks = this.getLocalStorage();
     const task = e.target;
-    let index = Number(task.id.split('_')[1]);
+    const index = Number(task.id.split('_')[1]);
     tasks[index - 1].taskName = e.target.value;
     localStorage.setItem('tasks', JSON.stringify(tasks));
     return tasks;

@@ -17,11 +17,11 @@ export default class UI {
     removeTask.forEach((button) => {
       button.addEventListener('click', TodoList.removeTask);
       button.addEventListener('click', UI.renderTasks);
-    })
+    });
 
     const updateTask = Array.from(document.querySelectorAll('.task-list .task-name'));
     updateTask.forEach((input) => {
       input.addEventListener('input', TodoList.updateTask);
-    })
+    });
   }
 }

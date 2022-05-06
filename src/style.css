@@ -106,6 +106,7 @@ li {
 
 .task-name {
   border: none;
+  text-align: center;
 }
 
 .task-name:focus-visible {
