@@ -48,6 +48,11 @@ form div input {
   padding-left: 20px;
 }
 
+form div input:focus-visible {
+  outline: none;
+}
+
+li button,
 form div button,
 .head button {
   border: none;
@@ -56,12 +61,7 @@ form div button,
   margin-right: 2%;
 }
 
-li img {
-  height: 30px;
-  padding: 5px;
-  margin-right: 1%;
-}
-
+li img,
 form div button img,
 .head button img {
   height: 20px;
@@ -102,4 +102,13 @@ li {
 
 .clear-complete:hover {
   background-color: rgb(225, 225, 225);
+}
+
+.task-name {
+  border: none;
+}
+
+.task-name:focus-visible {
+  outline: none;
+  background-color: rgb(249, 255, 73);
 }
