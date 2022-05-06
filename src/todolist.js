@@ -34,8 +34,8 @@ export default class TodoList {
   static markupAllTasks() {
     let allTasks = '';
     this.getLocalStorage().forEach((task) => {
-      allTasks += `<li class="task-list">
-                              <input type="checkbox">
+      allTasks += `<li class="task-list li_${task.id} ${task.completed ? 'checked-task' : ''}">
+                              <input type="checkbox" class="checkbox"  id="c_${task.id}" ${task.completed ? 'checked' : ''}>
                               <input class="task-name"  id="i_${task.id}" type="text" value="${task.taskName}"></input>
                               <button type="button" class="remove" id="${task.id}"><img src="8ae4449c8b41ee3a8178.svg" alt=""  id="${task.id}"></button>
                             </li>`;
@@ -57,6 +57,27 @@ export default class TodoList {
     const task = e.target;
     const index = Number(task.id.split('_')[1]);
     tasks[index - 1].taskName = e.target.value;
+    localStorage.setItem('tasks', JSON.stringify(tasks));
+    return tasks;
+  }
+
+  static checkBox = (e) => {
+    tasks = this.getLocalStorage();
+    const task = e.target;
+    const index = Number(task.id.split('_')[1]);
+
+    if (tasks[index - 1].completed === false) {
+      tasks[index - 1].completed = true;
+    } else if (tasks[index - 1].completed === true) {
+      tasks[index - 1].completed = false;
+    }
+    localStorage.setItem('tasks', JSON.stringify(tasks));
+    return tasks;
+  }
+
+  static clearComplete() {
+    tasks = TodoList.getLocalStorage();
+    tasks = tasks.filter((task) => task.completed === false);
     localStorage.setItem('tasks', JSON.stringify(tasks));
     return tasks;
   }
