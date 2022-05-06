@@ -10,6 +10,7 @@ export default class TodoList {
   static addTask = (e) => {
     e.preventDefault();
     let itask = document.querySelector('.add-task').value;
+    let tasks = this.getLocalStorage();
     tasks.push({ taskName: itask, completed: false, id: tasks.length + 1 });
     localStorage.setItem('tasks', JSON.stringify(tasks));
     document.querySelector('.add-task').value = '';
@@ -17,6 +18,7 @@ export default class TodoList {
   }
 
   static removeTask = (e) => {
+    let tasks = this.getLocalStorage();
     const button = e.target;
     const buttonID = button.id;
     console.log('my id is ' + buttonID);
@@ -37,7 +39,7 @@ export default class TodoList {
     this.getLocalStorage().forEach((task, id) => {
       allTasks += `<li class="task-list">
                               <input type="checkbox">
-                              <input class="task-name" type="text" value="${task.taskName}"></input>
+                              <input class="task-name"  id="i_${task.id}" type="text" value="${task.taskName}"></input>
                               <button type="button" class="remove" id="${task.id}"><img src="8ae4449c8b41ee3a8178.svg" alt=""  id="${task.id}"></button>
                             </li>`
     });
@@ -56,16 +58,16 @@ export default class TodoList {
     return tasks;
   }
 
-  // static #todoList = []
-
-  // static getTodoList() {
-  //   return this.#todoList;
-  // }
-
-  // static newTask = (task) => {
-  //   const index = this.#todoList.length + 1;
-  //   const newTask = { ...task, completed: false, index };
-  //   this.#todoList.push(newTask);
-  //   return newTask;
-  // }
+  static updateTask = (e) => {
+    console.log('updateTask');
+    let tasks = this.getLocalStorage();
+    const task = e.target;
+    console.log(task);
+    let index = Number(task.id.split('_')[1]);
+    console.log(index);
+    tasks[index - 1].taskName = e.target.value;
+    localStorage.setItem('tasks', JSON.stringify(tasks));
+    console.log(localStorage);
+    return tasks;
+  }
 }

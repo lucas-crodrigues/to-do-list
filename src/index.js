@@ -6,7 +6,6 @@ import Refresh from './art/refresh.svg';
 
 window.addEventListener('DOMContentLoaded', () => {
   UI.renderTasks();
-  UI.addEventListeners();
 });
 
 function component() {

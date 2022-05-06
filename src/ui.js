@@ -3,8 +3,8 @@ import TodoList from './todolist.js';
 export default class UI {
   static renderTasks() {
     const tasksContainer = document.querySelector('.todo-placeholder');
-    tasksContainer.innerHTML = TodoList.markupAllTasks();
     TodoList.updateIds();
+    tasksContainer.innerHTML = TodoList.markupAllTasks();
     UI.addEventListeners();
     console.log('im rendering');
   }
@@ -19,24 +19,12 @@ export default class UI {
       button.addEventListener('click', TodoList.removeTask);
       button.addEventListener('click', UI.renderTasks);
     })
+
+    const updateTask = Array.from(document.querySelectorAll('.task-list .task-name'));
+    console.log('im here')
+    console.log(updateTask);
+    updateTask.forEach((input) => {
+      input.addEventListener('input', TodoList.updateTask);
+    })
   }
-
-
-  // static #toDo = document.querySelector('.todo-placeholder');
-
-  // static #tasksTemplate = document.querySelector('li');
-
-  // static addTask = document.querySelector('.add-task');
-
-  // static displayEach(task) {
-  //   const taskElement = UI.#tasksTemplate.cloneNode(true);
-  //   taskElement.querySelector('input').checked = task.completed;
-  //   taskElement.querySelector('label').innerHTML = task.description;
-  //   UI.#toDo.appendChild(taskElement);
-  // }
-
-  // static displayList() {
-  //   const tasks = TodoList.getTodoList();
-  //   tasks.forEach((task) => UI.displayEach(task));
-  // }
 }
