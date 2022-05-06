@@ -6,7 +6,6 @@ export default class UI {
     TodoList.updateIds();
     tasksContainer.innerHTML = TodoList.markupAllTasks();
     UI.addEventListeners();
-    console.log('im rendering');
   }
 
   static addEventListeners = () => {
@@ -21,8 +20,6 @@ export default class UI {
     })
 
     const updateTask = Array.from(document.querySelectorAll('.task-list .task-name'));
-    console.log('im here')
-    console.log(updateTask);
     updateTask.forEach((input) => {
       input.addEventListener('input', TodoList.updateTask);
     })

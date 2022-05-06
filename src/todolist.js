@@ -21,11 +21,8 @@ export default class TodoList {
     let tasks = this.getLocalStorage();
     const button = e.target;
     const buttonID = button.id;
-    console.log('my id is ' + buttonID);
-    console.log('and my id is ' + tasks[buttonID - 1].id)
     tasks.splice(buttonID - 1, 1);
     localStorage.setItem('tasks', JSON.stringify(tasks));
-    console.log(localStorage);
     return tasks;
   }
 
@@ -47,27 +44,20 @@ export default class TodoList {
   }
 
   static updateIds() {
-    console.log('im updating')
     let tasks = this.getLocalStorage();
-    console.log(tasks);
     for (let i = 0; i < tasks.length; i++) {
       tasks[i].id = i + 1;
     }
     localStorage.setItem('tasks', JSON.stringify(tasks));
-    console.log(localStorage);
     return tasks;
   }
 
   static updateTask = (e) => {
-    console.log('updateTask');
     let tasks = this.getLocalStorage();
     const task = e.target;
-    console.log(task);
     let index = Number(task.id.split('_')[1]);
-    console.log(index);
     tasks[index - 1].taskName = e.target.value;
     localStorage.setItem('tasks', JSON.stringify(tasks));
-    console.log(localStorage);
     return tasks;
   }
 }
