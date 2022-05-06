@@ -4,6 +4,7 @@ export default class UI {
   static renderTasks() {
     const tasksContainer = document.querySelector('.todo-placeholder');
     tasksContainer.innerHTML = TodoList.markupAllTasks();
+    TodoList.updateIds();
     UI.addEventListeners();
     console.log('im rendering');
   }

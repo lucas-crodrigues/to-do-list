@@ -44,9 +44,17 @@ export default class TodoList {
     return allTasks;
   }
 
-  // static updateIds() {
-
-  // }
+  static updateIds() {
+    console.log('im updating')
+    let tasks = this.getLocalStorage();
+    console.log(tasks);
+    for (let i = 0; i < tasks.length; i++) {
+      tasks[i].id = i + 1;
+    }
+    localStorage.setItem('tasks', JSON.stringify(tasks));
+    console.log(localStorage);
+    return tasks;
+  }
 
   // static #todoList = []
 
