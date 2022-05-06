@@ -107,9 +107,19 @@ li {
 .task-name {
   border: none;
   text-align: center;
+  background-color: transparent;
+  width: inherit;
 }
 
 .task-name:focus-visible {
   outline: none;
   background-color: rgb(249, 255, 73);
+}
+
+.checked-task {
+  background-color: rgb(230, 230, 230);
+}
+
+.checked-task .task-name {
+  text-decoration: line-through;
 }

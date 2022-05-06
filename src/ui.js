@@ -23,5 +23,15 @@ export default class UI {
     updateTask.forEach((input) => {
       input.addEventListener('input', TodoList.updateTask);
     });
+
+    document.querySelectorAll('.checkbox').forEach((box) => {
+      box.addEventListener('change', TodoList.checkBox);
+      box.addEventListener('change', UI.renderTasks);
+    });
+
+    document.querySelector('.clear-complete').addEventListener('click', TodoList.clearComplete);
+    document.querySelector('.clear-complete').addEventListener('click', UI.renderTasks);
+
+    document.querySelector('.head button').addEventListener('click', UI.renderTasks);
   }
 }
