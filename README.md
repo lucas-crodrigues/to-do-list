@@ -12,7 +12,7 @@ This is the To-Do-List project for the second week of the second module in the m
 
 ## Live Demo
 
- N/A
+ [To-Do List](https://lucas-crodrigues.github.io/to-do-list/dist/)
 
  ## Loom video
 
