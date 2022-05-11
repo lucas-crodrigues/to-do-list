@@ -4,7 +4,7 @@
   "description": "![](https://img.shields.io/badge/Microverse-blueviolet)",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest --coverage",
     "webhint": "npx hint .",
     "stylelint": "npx stylelint **/*.{css,scss} --fix",
     "eslint": "npx eslint . --fix ",
@@ -23,6 +23,7 @@
     "eslint-plugin-import": "^2.26.0",
     "hint": "^6.1.11",
     "html-webpack-plugin": "^5.5.0",
+    "jest": "^28.1.0",
     "prettier": "^2.6.2",
     "style-loader": "^3.3.1",
     "stylelint": "^13.13.1",
