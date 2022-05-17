@@ -7,5 +7,5 @@ import Delete from './art/delete.svg';
 
 window.addEventListener('DOMContentLoaded', () => {
   UI.renderTasks();
-  return Add, More, Refresh, Delete;
+  return Add, More, Refresh, Delete; // eslint-disable-line no-sequences
 });
