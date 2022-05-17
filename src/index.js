@@ -7,4 +7,5 @@ import Delete from './art/delete.svg';
 
 window.addEventListener('DOMContentLoaded', () => {
   UI.renderTasks();
+  return Add, More, Refresh, Delete;
 });

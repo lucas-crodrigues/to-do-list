@@ -52,10 +52,6 @@ form div input:focus-visible {
   outline: none;
 }
 
-.remove:hover img {
-  content: url(./art/delete.svg);
-}
-
 li button,
 form div button,
 .head button {
@@ -70,6 +66,10 @@ form div button img,
 .head button img {
   height: 20px;
   width: 20px;
+}
+
+.remove:hover img {
+  content: url(./art/delete.svg);
 }
 
 .todo-placeholder {
