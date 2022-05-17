@@ -52,6 +52,10 @@ form div input:focus-visible {
   outline: none;
 }
 
+.remove:hover img {
+  content: url(./art/delete.svg);
+}
+
 li button,
 form div button,
 .head button {
