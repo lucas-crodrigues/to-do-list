@@ -3,6 +3,7 @@
 body {
   font-family: 'Roboto', sans-serif;
   background-color: rgb(240, 240, 240);
+  height: 100vh;
 }
 
 button {
@@ -68,6 +69,10 @@ form div button img,
   width: 20px;
 }
 
+.remove:hover img {
+  content: url(./art/delete.svg);
+}
+
 .todo-placeholder {
   flex-flow: column;
 }
@@ -122,4 +127,11 @@ li {
 
 .checked-task .task-name {
   text-decoration: line-through;
+}
+
+@media (max-width: 768px) {
+  .todo-list {
+    margin: 5% auto;
+    width: 90%;
+  }
 }

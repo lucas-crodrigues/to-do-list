@@ -37,7 +37,7 @@ export default class TodoList {
       allTasks += `<li class="task-list li_${task.id} ${task.completed ? 'checked-task' : ''}">
                               <input type="checkbox" class="checkbox"  id="c_${task.id}" ${task.completed ? 'checked' : ''}>
                               <input class="task-name"  id="i_${task.id}" type="text" value="${task.taskName}"></input>
-                              <button type="button" class="remove" id="${task.id}"><img src="8ae4449c8b41ee3a8178.svg" alt=""  id="${task.id}"></button>
+                              <button type="button" class="remove" id="${task.id}"><img src="${task.completed ? '2b385a415776d1fe3a5e.svg' : '8ae4449c8b41ee3a8178.svg'}" alt=""  id="${task.id}"></button>
                             </li>`;
     });
     return allTasks;
@@ -45,7 +45,7 @@ export default class TodoList {
 
   static updateIds() {
     tasks = this.getLocalStorage();
-    for (let i = 0; i < tasks.length; i++) { // eslint-disable-line no-plusplus
+    for (let i = 0; i < tasks.length; i += 1) {
       tasks[i].id = i + 1;
     }
     localStorage.setItem('tasks', JSON.stringify(tasks));
