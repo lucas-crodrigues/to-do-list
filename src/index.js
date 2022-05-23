@@ -4,7 +4,7 @@ import Add from './art/add.svg';
 import More from './art/more.svg';
 import Refresh from './art/refresh.svg';
 import Delete from './art/delete.svg';
-//add 
+//add a 
 
 window.addEventListener('DOMContentLoaded', () => {
   UI.renderTasks();
